@@ -26,6 +26,7 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,7 +75,12 @@ public class SearchFoodActivity extends AppCompatActivity {
 //                    Log.d("111",entity.toString());
 //                }
 
-        Log.d("-------------",json_str);
+                try {
+                    System.out.println("----:"+ URLDecoder.decode(json_str,"utf-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+//        Log.d("-------------",json_str);
 
             }
         }).start();

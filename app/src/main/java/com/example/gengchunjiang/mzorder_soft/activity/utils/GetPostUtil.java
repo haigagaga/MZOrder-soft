@@ -82,6 +82,7 @@ public class GetPostUtil {
             URLConnection conn = realUrl.openConnection();
             conn.setRequestProperty("accept", "*/*");
             conn.setRequestProperty("connection", "Keep-Alive");
+
             conn.setDoOutput(true);
             conn.setDoInput(true);
             //获取URLConnection对象对应的输出流
@@ -91,7 +92,7 @@ public class GetPostUtil {
             //输出流的缓冲
             out.flush();
             //定义BufferedReader输入流来读取URL响应
-            in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            in = new BufferedReader(new InputStreamReader(conn.getInputStream(),"UTF-8"));
             String line;
             while ((line = in.readLine()) != null) {
                 result += line;
