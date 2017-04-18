@@ -14,21 +14,11 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import com.example.gengchunjiang.mzorder_soft.R;
-import com.example.gengchunjiang.mzorder_soft.activity.entity.FoodEntity;
+
 import com.example.gengchunjiang.mzorder_soft.activity.utils.GetPostUtil;
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Type;
 import java.net.URLDecoder;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class SearchFoodActivity extends AppCompatActivity {
 
@@ -65,22 +55,14 @@ public class SearchFoodActivity extends AppCompatActivity {
             public void run() {
                 //[{Food:{foodId=2, placeId=0, foodName=豉汁蒸排骨, foodPrice=26.0, foodType=热, foodPic=chizhizhengpaigu.jpg, foodInfo=豉汁蒸排骨是一道广东经典的传统菜肴。属于粤菜，肉鲜美而有豉、蒜香味。}},
                 // {Food:{foodId=4, placeId=0, foodName=红菇排骨煲, foodPrice=30.0, foodType=热, foodPic=honggupaigutang.jpg, foodInfo=新鲜的红菇和排骨混合在一起散发的香气让人久久不能释怀，好吃不贵}}]
-                Gson gson = new Gson();
+
                 String json_str = GetPostUtil.sendPost(SearchFood_URL, search_info);
+                /**
+                 * 要用编码解码来解决传递的字符串中有中文会出现乱码的情况
+                 */
+                String a=  URLDecoder.decode(json_str);
+                    Log.d("-------------",a);
 
-//                ArrayList<FoodEntity> list =  gson.fromJson(json_str, new
-//                        TypeToken<ArrayList<FoodEntity>>(){}.getType());
-//                for (int i = 0; i < list.size() ; i++) {
-//                    FoodEntity entity = list.get(i);
-//                    Log.d("111",entity.toString());
-//                }
-
-                try {
-                    System.out.println("----:"+ URLDecoder.decode(json_str,"utf-8"));
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-//        Log.d("-------------",json_str);
 
             }
         }).start();
