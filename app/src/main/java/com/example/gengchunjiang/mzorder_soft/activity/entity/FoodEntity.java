@@ -3,11 +3,13 @@ package com.example.gengchunjiang.mzorder_soft.activity.entity;
 import android.graphics.Bitmap;
 import android.media.Image;
 
+import java.io.Serializable;
+
 /**
  * Created by gengchunjiang on 2017/3/30.
  */
 
-public class FoodEntity {
+public class FoodEntity implements Serializable{
 
 
     private int foodId;

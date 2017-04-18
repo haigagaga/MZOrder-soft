@@ -32,17 +32,17 @@ public class SearchFoodAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return foodEntityList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return foodEntityList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
