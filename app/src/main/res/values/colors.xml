@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBlue">#cd498ce9</color>
+    <color name="sosokuang">#CD454A50</color>
+    <color name="gray">#CD6A6E73</color>
+    <color name="white">#FFFFFF</color>
+    <color name="desccolor">#452222</color>
+    <color name="black">#000000</color>
+    <color name="top_bar_normal_bg">#f3f3f3</color>
+    <color name="recent_top_color">#007aff</color>
+    <color name="lightBlue">#FF82ACDA</color>
+    <color name="title_bottom_line">#c8c7cc</color>
+    <color name="bottom_color_line">#c8c7cc</color>
+</resources>

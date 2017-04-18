@@ -1,0 +1,40 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    >
+
+
+    <!--<item-->
+        <!--android:id="@+id/action_add"-->
+        <!--android:orderInCategory="10"-->
+        <!--android:title="add"-->
+        <!--android:icon="@mipmap/add"-->
+        <!--app:showAsAction="always" />-->
+    <!--<item-->
+        <!--android:id="@+id/action_del"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="del"-->
+        <!--android:icon="@mipmap/del"-->
+        <!--app:showAsAction="always" />-->
+    <item
+        android:id="@+id/action_listview"
+        android:orderInCategory="100"
+        android:title="百苑餐厅"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_gridview"
+        android:orderInCategory="100"
+        android:title="朝阳餐厅"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_hor_gridview"
+        android:orderInCategory="100"
+        android:title="第三食堂"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_staggered"
+        android:orderInCategory="100"
+        android:title="第四食堂"
+        app:showAsAction="never" />
+</menu>

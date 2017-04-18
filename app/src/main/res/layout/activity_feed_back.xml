@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_feed_back"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gengchunjiang.mzorder_soft.activity.activity.FeedBackActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/top_bar_normal_bg"
+        android:gravity="center_vertical" >
+
+        <include layout="@layout/commom_back_btn" />
+        <TextView
+            android:id="@+id/tv_contact_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="意见反馈"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_below="@+id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/title_bottom_line"
+        />
+
+    <EditText
+        android:gravity="top"
+        android:background="@color/colorBlue"
+        android:id="@+id/et_yijian"
+        android:layout_below="@+id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <Button
+        android:text="提交"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/et_yijian"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/button" />
+</RelativeLayout>

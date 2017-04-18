@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_food"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.gengchunjiang.mzorder_soft.activity.activity.SearchFoodActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/top_bar_normal_bg"
+        android:gravity="center_vertical" >
+
+        <include layout="@layout/commom_back_btn" />
+        <TextView
+            android:id="@+id/tv_contact_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="搜菜品"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_below="@+id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/title_bottom_line"
+        />
+    <RelativeLayout
+        android:layout_below="@+id/textview1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include android:id="@+id/search"
+            layout="@layout/search_bar_with_okbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_listLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/search"
+
+            >
+            <TextView
+                android:id="@+id/ftv"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:text="为您找到以下菜品"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                />
+            <View
+                android:id="@+id/view_vertical_devide1"
+                style="@style/gray_long_vertical_devide"
+                android:layout_below="@id/ftv"
+                />
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:cacheColorHint="#00000000"
+                android:descendantFocusability="afterDescendants"
+                android:divider="@color/bottom_color_line"
+                android:dividerHeight="1px"
+                android:layout_below="@id/view_vertical_devide1"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

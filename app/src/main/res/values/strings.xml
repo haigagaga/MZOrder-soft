@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MZOrder-soft</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="back">&#160;返回</string>
+</resources>
