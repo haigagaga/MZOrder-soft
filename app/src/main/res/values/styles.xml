@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="gray_long_vertical_devide">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1px</item>
@@ -27,6 +28,15 @@
         <item name="android:layout_height">30dp</item>
         <item name="android:layout_margin">5dp</item>
         <item name="android:background">@drawable/more_activity_item_selector_bottom_corners</item>
+    </style>
+
+    <style name="transparentFrameWindowStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/photo_choose_bg</item>
+    </style>
+
+    <style name="main_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
     </style>
 
 </resources>
