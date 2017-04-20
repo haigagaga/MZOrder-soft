@@ -1,8 +1,12 @@
 package com.example.gengchunjiang.mzorder_soft.activity.fragment;
 
+import android.app.Dialog;
 import android.content.Intent;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 
 
@@ -13,7 +17,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -24,6 +31,10 @@ import com.example.gengchunjiang.mzorder_soft.activity.activity.FeedBackActivity
 import com.example.gengchunjiang.mzorder_soft.activity.activity.LoginActivity;
 import com.example.gengchunjiang.mzorder_soft.activity.activity.MyBalanceActivity;
 import com.example.gengchunjiang.mzorder_soft.activity.activity.ResetPasswordActivity;
+
+import java.io.IOException;
+
+import static android.app.Activity.RESULT_OK;
 
 
 /**
@@ -36,6 +47,12 @@ public class GerenzhongxinFragment extends Fragment implements View.OnClickListe
     private Button but_zhuxiao, but_guanyuwomen;
     private RelativeLayout rl_about_us,rl_yijian,rl_xiugai,rl_yu_e;
     private RelativeLayout rl_phone_number;
+    private ImageButton ib_avatar;
+
+    private int PICK_IMAGE_REQUEST = 1;
+
+    private Bitmap bitmap;
+
 
     @Nullable
     @Override
@@ -62,6 +79,8 @@ public class GerenzhongxinFragment extends Fragment implements View.OnClickListe
         rl_yu_e.setOnClickListener(this);
         rl_phone_number = (RelativeLayout) view.findViewById(R.id.rl_phone_number);
         rl_phone_number.setOnClickListener(this);
+        ib_avatar = (ImageButton)view.findViewById(R.id.ib_avatar);
+        ib_avatar.setOnClickListener(this);
     }
 
 
@@ -91,7 +110,52 @@ public class GerenzhongxinFragment extends Fragment implements View.OnClickListe
                 startActivity(intent5);
                 break;
             case R.id.rl_phone_number:
+                break;
+            case R.id.ib_avatar:
+//                View view= getLayoutInflater().inflate(R.layout.choss,null);
+//                Dialog dialog=new Dialog(this,R.style.transparentFrameWindowStyle);
+//                dialog.setContentView(view,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//
+//                Window window=dialog.getWindow();
+//                //设置显示动画
+//                window.setWindowAnimations(R.style.main_menu_animstyle);
+//                WindowManager.LayoutParams wl=window.getAttributes();
+//                wl.x = 0;
+//                wl.y = getActivity().getWindowManager().getDefaultDisplay().getHeight();
+//                // 以下这两句是为了保证按钮可以水平满屏
+//                wl.width = ViewGroup.LayoutParams.MATCH_PARENT;
+//                wl.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+//                dialog.onWindowAttributesChanged(wl);
+//                dialog.setCanceledOnTouchOutside(true);
+//                dialog.show();
+            Intent intent6 = new Intent();
+                intent6.setType("image/*");
+                intent6.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent6,"Select Pic"),PICK_IMAGE_REQUEST);
+                break;
+        }
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (  requestCode == PICK_IMAGE_REQUEST&&resultCode == RESULT_OK && data != null
+                && data.getData() != null) {
+            Uri filePath = data.getData();
+            try {
+                //从相册里得到bitmap
+                bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
+                //把bitmap给ImageView
+                ib_avatar.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
 
         }
+
+
     }
 }

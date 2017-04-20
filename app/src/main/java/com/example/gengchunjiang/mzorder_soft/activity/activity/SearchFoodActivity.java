@@ -39,12 +39,12 @@ public class SearchFoodActivity extends AppCompatActivity {
     public static final String SearchFood_URL = "http://172.18.15.164:8080/MZOrder_Server/SearchFoodServlet";
 
     private ListView lv_search;
-    private SearchFoodAdapter searchFoodAdapter ;
-    private List<FoodEntity> foodlist =new ArrayList<>();
+    private SearchFoodAdapter searchFoodAdapter;
+    private List<FoodEntity> foodlist = new ArrayList<>();
 //    private Context context ;
 
     private ImageView iv_avatar;
-    private TextView tv_foodName,tv_foodPlace;
+    private TextView tv_foodName, tv_foodPlace;
 
 
     @Override
@@ -53,23 +53,19 @@ public class SearchFoodActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search_food);
 
         initView();
-//        initDatas();
     }
 
-//    private void initDatas() {
-//
-//
-//    }
+
 
     private void initView() {
-        tv_foodPlace = (TextView)findViewById(R.id.foodplace);
-        tv_foodName = (TextView)findViewById(R.id.foodName);
-        iv_avatar = (ImageView)findViewById(R.id.avatar);
+        tv_foodPlace = (TextView) findViewById(R.id.foodplace);
+        tv_foodName = (TextView) findViewById(R.id.foodName);
+        iv_avatar = (ImageView) findViewById(R.id.avatar);
         bt_search = (ImageButton) findViewById(R.id.ok);
         edit_search = (EditText) findViewById(R.id.query);
         edit_search.requestFocus();
         lv_search = (ListView) findViewById(R.id.list);
-        searchFoodAdapter = new SearchFoodAdapter(foodlist,getApplicationContext());
+        searchFoodAdapter = new SearchFoodAdapter(foodlist, getApplicationContext());
         lv_search.setAdapter(searchFoodAdapter);
     }
 
@@ -92,30 +88,29 @@ public class SearchFoodActivity extends AppCompatActivity {
                 String str = URLDecoder.decode(json_str);
                 Log.d("---------", str);
 //                int time = str.indexOf("{");
-                    try {
- //[{"foodPrice":26,"foodName":"豉汁蒸排骨","foodInfo":"豉汁蒸排骨是一道广东经典的传统菜肴。属于粤菜，肉鲜美而有豉、蒜香味。","foodType":"热","foodId":2,"foodPic":"chizhizhengpaigu.jpg"},{"foodPrice":30,"foodName":"红菇排骨煲","foodInfo":"新鲜的红菇和排骨混合在一起散发的香气让人久久不能释怀，好吃不贵","foodType":"热","foodId":4,"foodPic":"honggupaigutang.jpg"}]
-                        JSONArray jsonArray = new JSONArray(str);
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            JSONObject object = jsonArray.getJSONObject(i);
-                            String foodName = object.getString("foodName");
-                            float foodPrice = object.getInt("foodPrice");
-//                            String foodPlace = object.getString("foodPlace");
-                            String foodPic = object.getString("foodPic");
-                            FoodEntity food = new FoodEntity();
-                            food.setFoodName(foodName);
-//                            food.setFoodPlace(foodPlace);
-                            food.setFoodPrice(foodPrice);
-                            Message msg = new Message();
-                            msg.obj = food;
+                try {
+                    //[{"foodPrice":26,"foodName":"豉汁蒸排骨","foodInfo":"豉汁蒸排骨是一道广东经典的传统菜肴。属于粤菜，肉鲜美而有豉、蒜香味。","foodType":"热","foodId":2,"foodPic":"chizhizhengpaigu.jpg"},{"foodPrice":30,"foodName":"红菇排骨煲","foodInfo":"新鲜的红菇和排骨混合在一起散发的香气让人久久不能释怀，好吃不贵","foodType":"热","foodId":4,"foodPic":"honggupaigutang.jpg"}]
+                    JSONArray jsonArray = new JSONArray(str);
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject object = jsonArray.getJSONObject(i);
+//                            String foodName = object.getString("foodName");
+//                            float foodPrice = object.getInt("foodPrice");
+//                            String foodPic = object.getString("foodPic");
+//                            FoodEntity food = new FoodEntity();
+//                            food.setFoodName(foodName);
+////                            food.setFoodPlace(foodPlace);
+//                            food.setFoodPrice(foodPrice);
+                        Message msg = new Message();
+                        msg.obj = object;
 //                            Bundle bundle = new Bundle();
 //                            bundle.putSerializable("food",food);
 //                            msg.setData(bundle);
-                            msg.what=1;
-                           handler.sendMessage(msg);
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
+                        msg.what = 1;
+                        handler.sendMessage(msg);
                     }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
 
             }
@@ -128,12 +123,24 @@ public class SearchFoodActivity extends AppCompatActivity {
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            switch (msg.what){
+            switch (msg.what) {
                 case 1:
-//                    Bundle buddle = msg.getData();
-//                    Serializable food = buddle.getSerializable("food");
-                   FoodEntity food = (FoodEntity) msg.obj;
-                    foodlist.add(food);
+//                   Bundle buddle = msg.getData();
+//                   Serializable food = buddle.getSerializable("food");
+                    JSONObject object = (JSONObject) msg.obj;
+                    try {
+                        String foodName = object.getString("foodName");
+                        float foodPrice = object.getInt("foodPrice");
+//                            String foodPic = object.getString("foodPic");
+                        FoodEntity food = new FoodEntity();
+                        food.setFoodName(foodName);
+//                            food.setFoodPlace(foodPlace);
+                        food.setFoodPrice(foodPrice);
+                        foodlist.add(food);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
             }
 
         }

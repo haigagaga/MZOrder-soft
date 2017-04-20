@@ -11,12 +11,14 @@
         android:duplicateParentState="true" >
 
         <TextView
+            android:layout_marginRight="20dp"
             android:id="@+id/tv_food_price"
             android:layout_centerInParent="true"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="25.00"
+            android:textColor="@color/colorBlue"
             android:textSize="20dp"/>
 
         <FrameLayout

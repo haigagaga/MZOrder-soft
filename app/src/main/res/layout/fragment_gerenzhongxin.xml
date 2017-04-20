@@ -11,6 +11,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/ib_avatar"
             android:layout_margin="10dp"
             android:layout_width="132dp"
             android:layout_height="109dp"

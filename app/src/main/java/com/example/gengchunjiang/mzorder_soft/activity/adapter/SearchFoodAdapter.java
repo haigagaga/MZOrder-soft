@@ -22,7 +22,7 @@ public class SearchFoodAdapter extends BaseAdapter {
     private List<FoodEntity> foodEntityList;
     private LayoutInflater inflater;
     private Context context;
-    private View view;
+
 
     public SearchFoodAdapter(List<FoodEntity> foodEntityList, Context context) {
         this.foodEntityList = foodEntityList;
@@ -51,14 +51,15 @@ public class SearchFoodAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.item_search_food, parent, false);
             viewHolder = new ViewHolder();
-            viewHolder.tv_foodPlace = (TextView) convertView.findViewById(R.id.foodplace);
+//            viewHolder.tv_foodPlace = (TextView) convertView.findViewById(R.id.foodplace);
             viewHolder.tv_foodName = (TextView) convertView.findViewById(R.id.foodName);
-            viewHolder.iv_avatar = (ImageView) convertView.findViewById(R.id.avatar);
+//            viewHolder.iv_avatar = (ImageView) convertView.findViewById(R.id.avatar);
+            viewHolder.tv_foodPrice = (TextView) convertView.findViewById(R.id.tv_food_price);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        return view;
+        return convertView;
     }
 
 
@@ -66,6 +67,7 @@ public class SearchFoodAdapter extends BaseAdapter {
         ImageView iv_avatar;
         TextView tv_foodName;
         TextView tv_foodPlace;
+        TextView tv_foodPrice;
     }
 
 }
