@@ -27,4 +27,45 @@
     </RelativeLayout>
 
 
+    <ImageView
+
+        android:layout_above="@+id/tv"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/buildings" />
+
+
+    <TextView
+        android:textColor="#ccc"
+        android:id="@+id/tv"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MZOrder  System"
+        android:textSize="25dp" />
+
+    <TextView
+        android:textColor="#ccc"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Designed by Anthony" />
+
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#ccc"
+        android:text="Copyright© 2016-2017 Ant. All Rights Reserved"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/textView2" />
 </RelativeLayout>

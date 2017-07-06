@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -35,4 +36,12 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
     compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.okhttp:okhttp:2.7.5'
+    compile project(':Phoenix-master1')
+    compile files('src/main/libs/xUtils-2.6.14.jar')
+    compile files('src/main/libs/httpmime-4.2.5.jar')
+    compile files('src/main/libs/org.apache.http.legacy.jar')
+    compile 'com.flipboard:bottomsheet-core:1.5.1'
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
+    compile 'com.jakewharton:butterknife:8.6.0'
 }

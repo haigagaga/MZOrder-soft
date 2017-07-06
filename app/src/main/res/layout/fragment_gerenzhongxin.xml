@@ -1,76 +1,116 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_gerenzhongxin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/ll_gerenzhongxin">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/ib_avatar"
-            android:layout_margin="10dp"
+        <com.example.gengchunjiang.mzorder_soft.activity.widget.XCRoundImageView
+            android:id="@+id/iv_avatar"
             android:layout_width="132dp"
-            android:layout_height="109dp"
+            android:layout_height="132dp"
+            android:layout_margin="10dp"
             android:src="@drawable/default_avatar" />
 
+
+        <!--<RelativeLayout-->
+        <!--android:id="@+id/rl_unlogin"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<TextView-->
+        <!--android:textColor="#ccc"-->
+        <!--android:id="@+id/tv1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="您还未登陆，请"-->
+
+        <!--/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/tv_login"-->
+        <!--android:textColor="#ccc"-->
+        <!--android:layout_toRightOf="@+id/tv1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/tv_login"-->
+        <!--/>-->
+
+
+        <!--</RelativeLayout>-->
+
+
         <LinearLayout
+            android:id="@+id/ll_loged"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <TextView
-
-                    android:layout_centerInParent="true"
-                    android:layout_weight="4"
+                    android:id="@+id/tv_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="用户名"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="4"
                     android:gravity="center"
+                    android:hint="用户名"
                     android:textSize="18dp" />
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_phone_number"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <TextView
-
-                    android:layout_centerInParent="true"
-                    android:layout_weight="4"
+                    android:id="@+id/tv_phoneNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="手机号"
+                    android:layout_centerInParent="true"
+                    android:layout_weight="4"
                     android:gravity="center"
+                    android:hint="手机号"
                     android:textSize="18dp" />
 
                 <ImageView
-                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/right_arrow_icon"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:src="@drawable/right_arrow_icon" />
             </RelativeLayout>
 
         </LinearLayout>
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#aaaaaa" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="#aaaaaa" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,122 +119,144 @@
 
         <RelativeLayout
             android:id="@+id/rl_yu_e"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
 
-                android:layout_centerInParent="true"
-                android:layout_weight="4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="我的余额"
+                android:layout_centerInParent="true"
+                android:layout_weight="4"
                 android:gravity="center"
-                android:textSize="18dp" />
+                android:text="我的余额"
+                android:textSize="18dp"  />
 
             <ImageView
-                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerInParent="true"
-                android:src="@drawable/right_arrow_icon"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:src="@drawable/right_arrow_icon" />
         </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="15dip"
+            android:background="#c1c1c1" />
 
         <RelativeLayout
             android:id="@+id/rl_xiugai"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
 
-                android:layout_centerInParent="true"
-                android:layout_weight="4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="修改密码"
+                android:layout_centerInParent="true"
+                android:layout_weight="4"
                 android:gravity="center"
-                android:textSize="18dp" />
+                android:text="修改密码"
+                android:textSize="18dp"  />
 
             <ImageView
-                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerInParent="true"
-                android:src="@drawable/right_arrow_icon"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:src="@drawable/right_arrow_icon" />
         </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="15dip"
+            android:background="#c1c1c1" />
 
         <RelativeLayout
             android:id="@+id/rl_yijian"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
 
-                android:layout_centerInParent="true"
-                android:layout_weight="4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="意见反馈"
+                android:layout_centerInParent="true"
+                android:layout_weight="4"
                 android:gravity="center"
-                android:textSize="18dp" />
+                android:text="意见反馈"
+                android:textSize="18dp"  />
 
             <ImageView
-                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerInParent="true"
-                android:src="@drawable/right_arrow_icon"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:src="@drawable/right_arrow_icon" />
         </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="15dip"
+            android:background="#c1c1c1" />
 
         <RelativeLayout
             android:id="@+id/rl_about_us"
-            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <TextView
 
-                android:layout_centerInParent="true"
-                android:layout_weight="4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="关于我们"
+                android:layout_centerInParent="true"
+                android:layout_weight="4"
                 android:gravity="center"
+                android:text="关于我们"
                 android:textSize="18dp" />
 
             <ImageView
-                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerInParent="true"
-                android:src="@drawable/right_arrow_icon"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:src="@drawable/right_arrow_icon" />
         </RelativeLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="15dip"
+            android:background="#c1c1c1" />
 
         <Button
-
+            android:textColor="@color/white"
             android:id="@+id/but_zhuxiao"
-            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:text="注销"
-            android:background="@color/colorBlue" />
-
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:background="@drawable/selector_blue_corners_button"
+            android:text="退出登录" />
 
     </LinearLayout>
 

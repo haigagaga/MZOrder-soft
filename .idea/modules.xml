@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MZOrder-soft.iml" filepath="$PROJECT_DIR$/MZOrder-soft.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Phoenix-master1/Phoenix-master1.iml" filepath="$PROJECT_DIR$/Phoenix-master1/Phoenix-master1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

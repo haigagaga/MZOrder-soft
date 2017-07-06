@@ -58,7 +58,7 @@ public class WelAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.food_image.setImageBitmap(list.get(position).getFoodImage());
+//        holder.food_image.setImageBitmap(list.get(position).getFoodImage());
         holder.food_name.setText(list.get(position).getFoodName());
         return convertView;
     }

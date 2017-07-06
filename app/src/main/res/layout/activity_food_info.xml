@@ -1,0 +1,292 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/top_bar_normal_bg"
+        android:gravity="center_vertical">
+
+        <include layout="@layout/commom_back_btn" />
+
+        <TextView
+            android:id="@+id/tv_contact_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="食物详情"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@+id/rl_title_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/iv_food"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/boluogulaorou" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/iv_food"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:textColor="@color/gray"
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="名称：" />
+
+                    <TextView
+                        android:id="@+id/tv_foodName"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="菠萝古老肉" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:textColor="@color/gray"
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="类别 ：" />
+
+                    <TextView
+                        android:id="@+id/tv_foodType"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="荤菜" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:textColor="@color/gray"
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="价格 ：" />
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥ 18" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:textColor="@color/gray"
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="所属食堂 ：" />
+
+                    <TextView
+                        android:id="@+id/tv_foodplace"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="百苑食堂" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/did1"
+                android:layout_below="@+id/did"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="1dp"
+                android:background="#aaaaaa" />
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/did1"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_foodInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="红扑扑，亮晶晶，颤巍巍，吃要趁热，第一口抿到肉皮，用牙齿轻轻往下纵切，下面一层是肥肉，绝对肥而不腻，再下面一层是瘦肉，入口即化，下面又是一层肥肉，紧跟着又是一层瘦肉，层次分明，又不见锋棱。红扑扑，亮晶晶，颤巍巍，吃要趁热，第一口抿到肉皮，用牙齿轻轻往下纵切，下面一层是肥肉，绝对肥而不腻，再下面一层是瘦肉，入口即化，下面又是一层肥肉，紧跟着又是一层瘦肉，层次分明，又不见锋棱。" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dod3"
+                android:layout_below="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="1dp"
+                android:background="#aaaaaa" />
+
+            <TextView
+                android:id="@+id/dod4"
+                android:layout_below="@+id/dod3"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="1dp"
+                android:background="#aaaaaa" />
+
+            <LinearLayout
+                android:id="@+id/ll_1"
+                android:paddingTop="4dp"
+                android:layout_below="@+id/dod4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_category_hot" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="最热评论"
+                    android:textColor="#000"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/ant_movie_detail_user_evaluate_click_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:onClick="evalue"
+                    android:src="@drawable/ant_movie_detail_user_evaluate_icon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_below="@+id/ll"
+                android:id="@+id/ant_movie_detail_user_evaluate_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/ant_movie_detail_user_evaluate_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/style_find_city_edit_text"
+                    android:drawableLeft="@drawable/xiugai"
+                    android:drawablePadding="5dp" />
+
+                <ImageView
+                    android:id="@+id/ant_movie_detail_user_evaluate_click_imageview"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:onClick="evaluateFood"
+                    android:src="@drawable/ant_movie_detail_user_evaluate_icon" />
+            </LinearLayout>
+
+            <com.example.gengchunjiang.mzorder_soft.activity.widget.MyListView
+                android:id="@+id/lv_ev"
+                android:dividerHeight="1dp"
+                android:layout_below="@+id/ll_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.example.gengchunjiang.mzorder_soft.activity.widget.MyListView>
+
+            <TextView
+                android:id="@+id/did"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="10dp"
+                android:background="#aaaaaa"
+                android:layout_below="@+id/iv_food"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <!--<Button-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@drawable/selector_blue_corners_button"-->
+        <!--android:id="@+id/bt_evalue"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:text="评价"-->
+        <!--android:onClick="evalue"-->
+        <!--android:layout_margin="13dp"-->
+        <!--android:layout_height="wrap_content" />-->
+
+
+</RelativeLayout>

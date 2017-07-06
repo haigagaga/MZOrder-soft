@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_feed_back"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.gengchunjiang.mzorder_soft.activity.activity.FeedBackActivity">
 
     <RelativeLayout
@@ -32,20 +33,80 @@
         android:background="@color/title_bottom_line"
         />
 
-    <EditText
-        android:gravity="top"
-        android:background="@color/colorBlue"
-        android:id="@+id/et_yijian"
-        android:layout_below="@+id/textview"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="200dp"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/edit_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:gravity="left"
+            android:maxLength="200"
+            android:hint="请输入反馈内容（最多200字）"
+            android:textSize="15sp"
+            android:textColor="#424242"
+            android:textColorHint="#9e9e9e"
+            android:background="@null" />
+
+        <TextView
+            android:id="@+id/txt_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="4dp"
+            android:layout_gravity="right|bottom"
+            android:text="0/200"
+            android:textSize="12sp"
+            android:textColor="#9e9e9e" />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#dcdcdc" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="15dp"
+        android:background="#dcdcdc" />
+
+    <EditText
+        android:id="@+id/edit_contact_way"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:hint="请输入您的联系方式（可选）"
+        android:textSize="15sp"
+        android:textColor="#424242"
+        android:textColorHint="#9e9e9e"
+        android:background="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#dcdcdc" />
+
+    <!--<android.support.v7.widget.AppCompatButton-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--style="@style/Widget.MZOrder.Button"-->
+    <!--android:gravity="center"-->
+    <!--android:text="登陆"/>-->
 
     <Button
+        android:onClick="commit_feedback"
+        android:background="@drawable/selector_blue_corners_button"
+        android:id="@+id/bt_commit"
+        android:layout_width="match_parent"
         android:text="提交"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/et_yijian"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/button" />
-</RelativeLayout>
+        android:textColor="@color/white"
+        android:layout_margin="13dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

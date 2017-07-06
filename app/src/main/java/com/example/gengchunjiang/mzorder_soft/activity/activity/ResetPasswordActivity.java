@@ -3,6 +3,7 @@ package com.example.gengchunjiang.mzorder_soft.activity.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,6 +17,8 @@ public class ResetPasswordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_reset_password);
         
         initView();
@@ -23,9 +26,9 @@ public class ResetPasswordActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        edit_oldpsd = (EditText)findViewById(R.id.edit_oldpsd);
-        edit_newpsd =(EditText) findViewById(R.id.edit_newpsd);
-        edit_repeatpsd = (EditText)findViewById(R.id.edit_repeatpsd);
+//        edit_oldpsd = (EditText)findViewById(R.id.edit_oldpsd);
+//        edit_newpsd =(EditText) findViewById(R.id.edit_newpsd);
+//        edit_repeatpsd = (EditText)findViewById(R.id.edit_repeatpsd);
     }
 
 

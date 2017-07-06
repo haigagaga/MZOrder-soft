@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    android:weightSum="5"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/cell_normal"
+    android:layout_marginLeft="@dimen/spacing_major"
+    android:textColor="@color/primary_text"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <TextView
+        android:id="@+id/tv_foodName"
+        android:layout_weight="3"
+        android:textColor="@color/gray"
+        android:text="菜品名称"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_foodNum"
+        android:layout_weight="1"
+        android:textColor="@color/gray"
+        android:text="×1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_foodPrice"
+        android:layout_weight="1"
+        android:textColor="@color/gray"
+        android:text="￥49.0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

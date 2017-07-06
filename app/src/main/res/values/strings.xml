@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">MZOrder-soft</string>
+    <string name="app_name">食堂无线点餐系统</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="back">&#160;返回</string>
+    <string name="login_text_forget_pwd"><u>随便看看</u></string>
+    <string name="tv_login"><u>登陆</u></string>
+    <string name="title_activity_remark">RemarkActivity</string>
 </resources>
